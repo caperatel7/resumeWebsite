@@ -6,6 +6,7 @@
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.3",
     "cra-template": "1.2.0",
+    "gh-pages": "^6.3.0",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.7",
     "react-bootstrap-icons": "^1.11.5",
@@ -17,6 +18,8 @@
     "react-scripts": "5.0.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
