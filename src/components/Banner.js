@@ -11,7 +11,7 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(100 - Math.random() * 25);
 //   const [index, setIndex] = useState(1);
-  const toRotate = [ "Full Stack Developer", "Frontend Specialist", "Scrum Team Leader" ];
+  const toRotate = [ "Full Stack Developer", "UX/UI Specialist", "Scrum Team Leader" ];
   const period = 150;
 
   useEffect(() => {
@@ -58,7 +58,7 @@ export const Banner = () => {
                      different team settings. Committed to delivering high-quality results and working
                      collaboratively in a dynamic environment. Adept at leading Agile teams while
                      exemplifing a high-level professional capable of delivering exceptional results in the
-                     realm of software development and IAM architecture.</p>
+                     realm of software development and design trends.</p>
                   <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
               </div>}
             </TrackVisibility>
