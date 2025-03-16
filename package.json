@@ -1,7 +1,6 @@
 {
-  "homepage": "https://caperatel7.github.io/resumeWebsite",
   "name": "personal-portfolio",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "private": true,
   "dependencies": {
     "animate.css": "^4.1.1",
