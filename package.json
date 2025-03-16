@@ -17,13 +17,14 @@
     "react-on-screen": "^2.1.1",
     "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.1",
+    "serve": "^14.2.4",
     "web-vitals": "^4.2.4"
   },
   "scripts": {
+    "start": "serve -s build",
+    "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
