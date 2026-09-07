@@ -4,14 +4,14 @@ import headerImg from "../assets/img/header-img.svg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import { HashLink } from 'react-router-hash-link';
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(100 - Math.random() * 25);
-//   const [index, setIndex] = useState(1);
-  const toRotate = [ "Full Stack Developer", "UX/UI Specialist", "Scrum Team Leader" ];
+  const toRotate = [ "Full Stack Developer", "UX/UI Specialist", "Funniest Dev on the Team" ];
   const period = 150;
 
   useEffect(() => {
@@ -53,13 +53,17 @@ export const Banner = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">Welcome to my Portfolio</span>
-                <h1>{`Hi! I'm Kaija,`} <span className="txt-rotate"><span className="wrap">{text}</span></span></h1>
-                  <p>Skilled and motivated Developer with experience with multiple tech stacks and in
-                     different team settings. Committed to delivering high-quality results and working
-                     collaboratively in a dynamic environment. Adept at leading Agile teams while
-                     exemplifing a high-level professional capable of delivering exceptional results in the
-                     realm of software development and design trends.</p>
-                  <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+                <h1>{`Hi! I'm Kaija Collette,`} <span className="txt-rotate"><span className="wrap">{text}</span></span></h1>
+                  <p>Sometimes seeing is believing! I can tell you I've put together web based
+                     applications or we could break down the code & UI together!</p>
+                  <p>Throughout the years I have become adept at troubleshooting complex technical
+                     issues, collaborating across teams, and translating business requirements into
+                     reliable software solutions. To this day I remain passionate about continuously
+                     learning new technologies and delivering applications that provide a seamless
+                     user experience!</p>
+                  <HashLink to='#connect'>
+                    <button>Let’s Connect <ArrowRightCircle size={25} /></button>
+                  </HashLink>
               </div>}
             </TrackVisibility>
           </Col>

@@ -32,6 +32,11 @@ body {
   overflow-x: hidden;
   position: relative;
   background-color: #121212 !important;
+  background-image: url('./assets/img/banner-bg.png');
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #fff !important;
   font-family: 'Centra', sans-serif !important;
 }
@@ -144,13 +149,15 @@ span.navbar-text {
 }
 .social-icon a img {
 	width: 40%;
+	height: 40%;
+	object-fit: contain;
 	z-index: 1;
 	transition: 0.3s ease-in-out;
 }
 .social-icon a:hover img {
 	filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
 }
-.navbar-text button {
+.nav-cta {
   font-weight: 700;
   color: #fff;
   border: 1px solid #fff;
@@ -161,10 +168,10 @@ span.navbar-text {
 	background-color: transparent;
 	transition: 0.3s ease-in-out;
 }
-.navbar-text button span {
+.nav-cta span {
   z-index: 1;
 }
-.navbar-text button::before {
+.nav-cta::before {
   content: "";
   width: 0%;
   height: 100%;
@@ -175,10 +182,10 @@ span.navbar-text {
   z-index: -1;
   transition: 0.3s ease-in-out;
 }
-.navbar-text button:hover {
+.nav-cta:hover {
   color: #121212;
 }
-.navbar-text button:hover::before {
+.nav-cta:hover::before {
 	content: "";
 	width: 100%;
 	height: 100%;
@@ -234,10 +241,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner {
   margin-top: 0;
   padding: 260px 0 100px 0;
-  background-image: url('./assets/img/banner-bg.png');
-  background-position: top center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 .banner .tagline {
   font-weight: 700;
@@ -264,14 +267,22 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   line-height: 1.5em;
   width: 96%;
 }
+.banner p + p {
+  margin-top: 16px;
+}
+.banner a {
+  display: inline-block;
+  margin-top: 60px;
+  text-decoration: none;
+}
 .banner button {
   color: #fff;
   font-weight: 700;
   font-size: 20px;
-  margin-top: 60px;
   letter-spacing: 0.8px;
   display: flex;
   align-items: center;
+  margin-top: 0;
 }
 .banner button svg {
   font-size: 25px;
@@ -300,44 +311,144 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-right: 0.08em solid #666;
 }
 
-/************ Skills Css ************/
-.logos {
-  background-color: var(--base-100); /* Replace with your preferred background color */
-  border-radius: 30px;
-  padding: 30px 0;
-
-  @media (max-width: 1440px) {
-    border-radius: 0px;
-  }
-
-  .marquee {
-    width: 100vw; /* Full viewport width */
-    height: 128px; /* Matches the height of images */
-    overflow: hidden;
-    position: relative;
-
-    .track {
-      display: flex; /* Ensure all images are in a single row */
-      align-items: center; /* Center-align images vertically */
-      gap: 20px; /* Space between images */
-      animation: marquee 20s linear infinite; /* Adjust speed as needed */
-      width: fit-content; /* Shrink to fit content, ensuring smooth scroll */
-    }
-
-    img {
-      height: 100px; /* Set a consistent height for all images */
-      width: auto; /* Maintain aspect ratio */
-      object-fit: contain; /* Ensure images don’t get distorted */
-    }
-  }
+/************ Experience Css ************/
+.experience {
+  padding: 80px 0;
+  position: relative;
 }
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%); /* Scroll one full container width */
+.experience h2 {
+  font-size: 45px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.skill-stream {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  padding: 44px 0 20px;
+  margin-bottom: 60px;
+  cursor: pointer;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+.skill-stream-track {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  width: max-content;
+  will-change: transform;
+}
+.skill-icon {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+.skill-stream-track img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  flex: 0 0 auto;
+  transition: transform 0.2s ease-in-out;
+}
+.skill-stream-track img:hover {
+  transform: translateY(-6px) scale(1.1);
+}
+.skill-icon-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  margin-bottom: 10px;
+  padding: 4px 10px;
+  background: #fff;
+  color: #121212;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+  z-index: 2;
+}
+.skill-icon-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #fff;
+}
+.skill-icon:hover .skill-icon-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.job-row {
+  row-gap: 24px;
+}
+.job-item {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 24px 28px;
+  background: rgba(255, 255, 255, 0.03);
+  height: 100%;
+}
+.job-item h4 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #fff;
+}
+.job-item .job-company {
+  color: #B8B8B8;
+  font-size: 15px;
+  font-weight: 500;
+  display: block;
+  margin-top: 4px;
+}
+.job-item .job-dates {
+  color: #B8B8B8;
+  font-size: 14px;
+  font-style: italic;
+  display: block;
+  margin-top: 4px;
+}
+.job-item p {
+  color: #B8B8B8;
+  font-size: 15px;
+  line-height: 1.5em;
+  margin-top: 14px;
+}
+.job-bullets {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.job-bullets li {
+  position: relative;
+  padding-left: 20px;
+  color: #B8B8B8;
+  font-size: 15px;
+  line-height: 1.5em;
+}
+.job-bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+}
+@media (max-width: 767px) {
+  .skill-stream {
+    margin-bottom: 40px;
   }
 }
 
@@ -345,12 +456,23 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .project {
   padding: 80px 0;
   position: relative;
-  background-color: black;
 }
 .project h2 {
 	font-size: 45px;
 	font-weight: 700;
   text-align: center;
+}
+.astronaut {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 40px;
+  animation: updown 3s linear infinite;
+}
+.tab-placeholder {
+  color: #B8B8B8;
+  font-size: 18px;
+  text-align: center;
+  padding: 40px 0;
 }
 .project p {
   color: #B8B8B8;
@@ -369,7 +491,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   overflow: hidden;
 }
 .project .nav.nav-pills .nav-item {
-  width: 33.33333%;
+  width: 50%;
 }
 .project .nav.nav-pills .nav-link {
   background-color: transparent;
@@ -407,10 +529,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-radius: 55px 0px 0px 55px;
 }
 .nav-link#projects-tabs-tab-second {
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-}
-.nav-link#projects-tabs-tab-third {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 0 55px 55px 0;
 }
@@ -419,6 +537,17 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-radius: 30px;
   overflow: hidden;
   margin-bottom: 24px;
+}
+.proj-imgbx img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+.proj-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 .proj-imgbx::before {
   content: "";
@@ -473,7 +602,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 60px 0 200px 0;
 }
 .contact img {
-  width: 92%;
+  width: 65%;
+  clip-path: circle(50% at 50% 50%);
+  opacity: 0.85;
 }
 .contact h2 {
 	font-size: 45px;

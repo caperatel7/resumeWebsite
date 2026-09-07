@@ -2,6 +2,7 @@
   "name": "personal-portfolio",
   "version": "1.1.0",
   "private": true,
+  "homepage": "https://kaijacollette.com",
   "dependencies": {
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.3",
