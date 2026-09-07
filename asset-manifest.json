@@ -1,26 +1,33 @@
 {
   "files": {
-    "main.css": "/static/css/main.203b10de.css",
-    "main.js": "/static/js/main.369bf1fe.js",
-    "static/js/151.ead9b97f.chunk.js": "/static/js/151.ead9b97f.chunk.js",
+    "main.css": "/static/css/main.692108e8.css",
+    "main.js": "/static/js/main.a85bcacb.js",
+    "static/media/readMePreview.png": "/static/media/readMePreview.2781df0c5d9bd708899e.png",
+    "static/media/contact-photo.png": "/static/media/contact-photo.db367020534dfb6af2f7.png",
     "static/media/banner-bg.png": "/static/media/banner-bg.cc1273af450504afe755.png",
     "static/media/header-img.svg": "/static/media/header-img.84bf93eb20488a753440bf83d27db7bb.svg",
     "static/media/CentraNo2-Bold.ttf": "/static/media/CentraNo2-Bold.2faff7f7d3fc92a2fcd9.ttf",
     "static/media/CentraNo2-Medium.ttf": "/static/media/CentraNo2-Medium.f94be5b326d78bb32b95.ttf",
     "static/media/CentraNo2-Book.ttf": "/static/media/CentraNo2-Book.2b143fa4b734a3584043.ttf",
     "static/media/footer-bg.png": "/static/media/footer-bg.7bd67c0f73571d0acc02.png",
-    "static/media/contact-img.svg": "/static/media/contact-img.87eac2b29352fa01abb2f9510ef6ac7e.svg",
-    "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
-    "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
-    "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
+    "static/media/vscode.png": "/static/media/vscode.feaff7133881f2aaa9b0.png",
+    "static/media/python.png": "/static/media/python.e62b58bc1124255d3cc9.png",
+    "static/media/docker.svg": "/static/media/docker.1d41320cb0101dbbc6fe182abd590263.svg",
+    "static/media/rust-white.svg": "/static/media/rust-white.27246371f0e16fd77889462d6488ad9d.svg",
+    "static/media/cicd.svg": "/static/media/cicd.47684f7166ee70f9dbaa8c5bc91f62c7.svg",
+    "static/media/sql.svg": "/static/media/sql.60ec33723e9b175cb9581651f672b3fe.svg",
+    "static/media/nodejs.svg": "/static/media/nodejs.3eb147b0e1b7a5455b9bf254bc5884af.svg",
+    "static/media/gitlab.svg": "/static/media/gitlab.5a1c3c29a62a60d48bf876a38ee27c7b.svg",
+    "static/media/github-white.svg": "/static/media/github-white.007f414231a5296844d21f49bf4f59f8.svg",
     "static/media/nav-icon1.svg": "/static/media/nav-icon1.721d5414c26365f117e71d46b6641cb2.svg",
     "index.html": "/index.html",
-    "main.203b10de.css.map": "/static/css/main.203b10de.css.map",
-    "main.369bf1fe.js.map": "/static/js/main.369bf1fe.js.map",
-    "151.ead9b97f.chunk.js.map": "/static/js/151.ead9b97f.chunk.js.map"
+    "static/media/figma.svg": "/static/media/figma.2c2c9d7ff067a3272fbcb7e4700d15a6.svg",
+    "static/media/clickup.svg": "/static/media/clickup.565edc4782285cabaf99f047438239a5.svg",
+    "main.692108e8.css.map": "/static/css/main.692108e8.css.map",
+    "main.a85bcacb.js.map": "/static/js/main.a85bcacb.js.map"
   },
   "entrypoints": [
-    "static/css/main.203b10de.css",
-    "static/js/main.369bf1fe.js"
+    "static/css/main.692108e8.css",
+    "static/js/main.a85bcacb.js"
   ]
 }
