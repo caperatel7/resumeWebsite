@@ -167,6 +167,20 @@ span.navbar-text {
 	position: relative;
 	background-color: transparent;
 	transition: 0.3s ease-in-out;
+	outline: none;
+	box-shadow: none;
+}
+.nav-cta:focus,
+.nav-cta:focus-visible,
+.nav-cta:active {
+  outline: none;
+  box-shadow: none;
+}
+.navbar-brand a,
+.navbar-brand a:focus,
+.navbar-brand a:active {
+  outline: none;
+  box-shadow: none;
 }
 .nav-cta span {
   z-index: 1;
@@ -253,7 +267,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: inline-block;
 }
 .banner h1 {
-  font-size: 65px;
+  font-size: clamp(32px, 8vw, 65px);
   font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1;
@@ -317,7 +331,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
 }
 .experience h2 {
-  font-size: 45px;
+  font-size: clamp(28px, 6vw, 45px);
   font-weight: 700;
   text-align: center;
   margin-bottom: 50px;
@@ -450,6 +464,18 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   .skill-stream {
     margin-bottom: 40px;
   }
+  .project .nav.nav-pills {
+    width: 100%;
+    align-items: stretch;
+  }
+  .project .nav.nav-pills .nav-link {
+    font-size: 14px;
+    padding: 14px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
 }
 
 /************ Projects Css ************/
@@ -458,7 +484,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
 }
 .project h2 {
-	font-size: 45px;
+	font-size: clamp(28px, 6vw, 45px);
 	font-weight: 700;
   text-align: center;
 }
@@ -467,6 +493,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   justify-content: center;
   margin: 20px 0 40px;
   animation: updown 3s linear infinite;
+}
+.astronaut svg {
+  width: clamp(140px, 40vw, 240px);
+  height: auto;
 }
 .tab-placeholder {
   color: #B8B8B8;
@@ -607,7 +637,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   opacity: 0.85;
 }
 .contact h2 {
-	font-size: 45px;
+	font-size: clamp(28px, 6vw, 45px);
 	font-weight: 700;
   margin-bottom: 30px;
 }
@@ -670,6 +700,46 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 100%;
 }
 
+/************ Section Dividers Css ************/
+.wave-divider {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+  z-index: 1;
+}
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 70px;
+}
+.wave-divider.flip {
+  transform: rotate(180deg);
+}
+.soft-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 10px 0 50px;
+}
+.soft-divider-line {
+  height: 1px;
+  width: 100%;
+  max-width: 240px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35));
+}
+.soft-divider-line:last-child {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.35), transparent);
+}
+.soft-divider-dot {
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  box-shadow: 0 0 14px 4px rgba(170, 54, 124, 0.55);
+}
+
 /************ Footer Css ************/
 .footer {
   padding: 0 0 50px 0;
@@ -677,66 +747,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-}
-.newsletter-bx {
-  background: #FFFFFF;
-  border-radius: 55px;
-  color: #121212;
-  padding: 85px 125px;
-  margin-bottom: 80px;
-  margin-top: -122px;
-}
-.newsletter-bx h3 {
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  line-height: 1.2em;
-}
-.new-email-bx {
-  background: #fff;
-  padding: 5px;
-  border-radius: 20px;
-  position: relative;
-  z-index: 0;
-  display: flex;
-  align-items: center;
-}
-.new-email-bx::before {
-  content: "";
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
-  border-radius: 20px;
-  position: absolute;
-  z-index: -1;
-  top: -1px;
-  left: -1px;
-  bottom: -1px;
-  right: -1px;
-}
-.new-email-bx::after {
-  content: "";
-  background: #fff;
-  border-radius: 20px;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-.new-email-bx input {
-  width: 100%;
-  color: #121212;
-  font-weight: 500;
-  background: transparent;
-  border: 0;
-  padding: 0 15px;
-}
-.new-email-bx button {
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
-  padding: 20px 65px;
-  color: #fff;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  border-radius: 18px;
 }
 .footer img {
   width: 26%;
