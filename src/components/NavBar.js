@@ -56,7 +56,7 @@ export const NavBar = () => {
                 <a href="https://www.linkedin.com/in/kaija-collette-ms-81b184b6/" target="_blank" rel="noopener noreferrer">
                 <img src={navIcon1} alt="linkedin"/>
                 </a>
-                <a href="https://github.com/caperatel7/resumeWebsite" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/caperatel7?tab=repositories" target="_blank" rel="noopener noreferrer">
                 <img src={githubIcon} alt="github"/>
                 </a>
                 {/* <a href="#"><img src={navIcon3} alt="" /></a> */}

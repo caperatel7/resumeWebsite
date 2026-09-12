@@ -1,48 +1,15 @@
-import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.svg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import { HashLink } from 'react-router-hash-link';
+import { useTypewriter } from "../hooks/useTypewriter";
+
+const toRotate = [ "Full Stack Developer", "UX/UI Specialist", "Funniest Dev on Team" ];
 
 export const Banner = () => {
-  const [loopNum, setLoopNum] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [text, setText] = useState('');
-  const [delta, setDelta] = useState(100 - Math.random() * 25);
-  const toRotate = [ "Full Stack Developer", "UX/UI Specialist", "Funniest Dev on the Team" ];
-  const period = 150;
-
-  useEffect(() => {
-    let ticker = setInterval(() => {
-      tick();
-    }, delta);
-
-    return () => { clearInterval(ticker) };
-  }, //[delta]
-  );
-
-  const tick = () => {
-    let i = loopNum % toRotate.length;
-    let fullText = toRotate[i];
-    let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
-
-    setText(updatedText);
-
-    if (isDeleting) {
-      setDelta(prevDelta => prevDelta / 2);
-    }
-
-    if (!isDeleting && updatedText === fullText) {
-      setIsDeleting(true);
-      setDelta(period);
-    } else if (isDeleting && updatedText === '') {
-      setIsDeleting(false);
-      setLoopNum(loopNum + 1);
-      setDelta(250);
-    }
-  }
+  const text = useTypewriter(toRotate);
 
   return (
     <section className="banner" id="home">
@@ -53,7 +20,11 @@ export const Banner = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">Welcome to my Portfolio</span>
-                <h1>{`Hi! I'm Kaija Collette,`} <span className="txt-rotate"><span className="wrap">{text}</span></span></h1>
+                <h1>
+                  {`Hi! I'm Kaija Collette,`}
+                  <br />
+                  <span className="txt-rotate"><span className="wrap">{text}</span></span>
+                </h1>
                   <p>Sometimes seeing is believing! I can tell you I've put together web based
                      applications or we could break down the code & UI together!</p>
                   <p>Throughout the years I have become adept at troubleshooting complex technical

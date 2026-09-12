@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import portfolioPreview from "../assets/img/readMePreview.png";
+import nrgPreview from "../assets/img/nrg-preview.jpg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
@@ -101,6 +102,15 @@ export const Projects = () => {
     },
   ];
 
+  const nrgProjects = [
+    {
+      title: "NRG Marketing",
+      description: "Marketing Landing Page",
+      imgUrl: nrgPreview,
+      link: "https://caperatel7.github.io/NRG/",
+    },
+  ];
+
   return (
     <section className="project" id="projects">
       <Container>
@@ -116,7 +126,10 @@ export const Projects = () => {
                       <Nav.Link eventKey="first">Resume Portfolio</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="second">More Soon</Nav.Link>
+                      <Nav.Link eventKey="second">NRG Marketing</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link eventKey="third">More Soon</Nav.Link>
                     </Nav.Item>
                   </Nav>
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
@@ -135,6 +148,20 @@ export const Projects = () => {
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
+                      <Row className="justify-content-center">
+                        {
+                          nrgProjects.map((project, index) => {
+                            return (
+                              <ProjectCard
+                                key={index}
+                                {...project}
+                                />
+                            )
+                          })
+                        }
+                      </Row>
+                    </Tab.Pane>
+                    <Tab.Pane eventKey="third">
                       <p className="tab-placeholder">More soon!</p>
                     </Tab.Pane>
                   </Tab.Content>
