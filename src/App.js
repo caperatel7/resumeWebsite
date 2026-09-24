@@ -4,6 +4,7 @@ import { NavBar } from "./components/NavBar";
 import { Banner } from "./components/Banner";
 import { Experience } from "./components/Experience";
 import { Projects } from "./components/Projects";
+import { Architecture } from "./components/Architecture";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { WaveDivider, SoftDivider } from "./components/SectionDivider";
@@ -17,6 +18,8 @@ function App() {
       <Experience />
       <SoftDivider />
       <Projects />
+      <SoftDivider />
+      <Architecture />
       <WaveDivider fill="#AA367C" />
       <Contact />
       <WaveDivider fill="#121212" />

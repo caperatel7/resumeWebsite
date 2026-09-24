@@ -509,6 +509,56 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   text-align: center;
   padding: 40px 0;
 }
+.architecture-section {
+  padding: 80px 0;
+  position: relative;
+}
+.architecture-section h2 {
+  font-size: clamp(28px, 6vw, 45px);
+  font-weight: 700;
+  text-align: center;
+}
+.architecture-intro {
+  color: #B8B8B8;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px auto 20px auto;
+  text-align: center;
+  max-width: 640px;
+}
+.architecture-diagram {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  margin-bottom: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.architecture-diagram h4 {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+.architecture-diagram-canvas {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+}
+.architecture-diagram-canvas svg {
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+}
+.architecture-diagram-canvas a {
+  cursor: pointer;
+}
 .project p {
   color: #B8B8B8;
   font-size: 18px;
